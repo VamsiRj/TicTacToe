@@ -1,0 +1,125 @@
+html,
+body {
+  height: 100%; /* Ensure the body takes up the full height */
+  margin: 0; /* Remove default margin */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 100%; /* Take full height of the viewport */
+  text-align: center;
+}
+
+.title {
+  margin-top: 20px 20px; /* Reduced margin for better centering */
+  color: white;
+  font-size: 60px;
+}
+
+.title span {
+  color: #26ffcb;
+  padding-left: 15px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* Three columns of equal width */
+  margin: 20px auto; /* Center the board */
+}
+
+.boxes {
+  width: 100px;
+  height: 100px;
+  background-color: #1f3540; /* Dark background for boxes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #26ffcb; /* Light border color */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boxes:hover {
+  background-color: #2e474f; /* Slightly lighter on hover */
+}
+
+.reset {
+  width: 160px;
+  height: 70px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background: #1f3540;
+  font-size: 26px;
+  color: #26ffcb;
+  margin-top: 25px;
+}
+
+.reset:hover {
+  background: #26ffcb; /* Change background color on hover */
+  color: #1f3540; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly scale up the button */
+}
+
+.title img {
+  padding: 0; /* Remove padding if necessary */
+  height: 50px; /* Set the height */
+  vertical-align: middle; /* Align the image vertically with text */
+}
+
+.boxes img {
+  height: 40px; /* Smaller size for X and O */
+  width: 40px; /* Maintain aspect ratio */
+}
+
+/* Media Queries */
+
+/* Tablets and larger phones */
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px; /* Adjust title font size */
+  }
+
+  .board {
+    grid-template-columns: repeat(3, 80px); /* Reduce box size */
+    margin: 10px auto; /* Center the board */
+  }
+
+  .boxes {
+    width: 80px;
+    height: 80px;
+  }
+
+  .reset {
+    width: 180px; /* Adjust reset button width */
+    height: 70px; /* Adjust reset button height */
+    font-size: 22px; /* Adjust font size */
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .title {
+    font-size: 30px; /* Further reduce title font size */
+  }
+
+  .board {
+    grid-template-columns: repeat(3, 70px); /* Further reduce box size */
+    margin: 5px auto; /* Center the board */
+  }
+
+  .boxes {
+    width: 70px;
+    height: 70px;
+  }
+
+  .reset {
+    width: 150px; /* Adjust reset button width */
+    height: 60px; /* Adjust reset button height */
+    font-size: 20px; /* Adjust font size */
+  }
+}
